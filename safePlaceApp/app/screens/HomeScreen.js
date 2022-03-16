@@ -18,14 +18,12 @@ const HomeScreen = () => {
         <Text style={styles.sectionTitle}>safe</Text>
         <Text style={styles.sectionTitleSecondary}>Place</Text>
       </View>
-
-      <Map />
-
-      {/* <View style={styles.fakeMapContainer}>
-        <Text style={styles.fakeMap}></Text>
-      </View> */}
-
-      <HomeScreenWidget />
+      <View style={styles.mapContainer}>
+        <Map />
+      </View>
+      <View style={styles.widgetContainer}>
+        <HomeScreenWidget />
+      </View>
     </KeyboardAvoidingView>
   );
 };
@@ -36,7 +34,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.primaryBackground,
-    paddingHorizontal: 14,
+    flexDirection: "column",
+    // paddingHorizontal: 14, SET PADDING ENTIRE SCREEN
   },
   headerContainer: {
     flexDirection: "row",
@@ -53,15 +52,22 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: colors.primary,
   },
-  fakeMap: {
-    width: "100%",
-    height: 250,
-    backgroundColor: "black",
-    marginTop: 70,
-    borderRadius: 5,
+
+  // MAP
+  mapContainer: {
+    // position: "absolute",
   },
-  fakeMapContainer: {
-    justifyContent: "center",
-    alignItems: "center",
+
+  widgetContainer: {
+    marginHorizontal: 20,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.35,
+    shadowRadius: 2,
+    
+    elevation: 2,
   },
 });
