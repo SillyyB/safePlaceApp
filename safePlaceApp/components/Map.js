@@ -1,28 +1,33 @@
-import { StyleSheet, Text, View, Dimensions } from "react-native";
-import React, { useState, useEffect } from "react";
+import { SafeAreaView, View, Text, StyleSheet } from "react-native";
+import React from "react";
+
+//import all the components we are going to use.
 
 import MapView, { Marker } from "react-native-maps";
 
-const Map = () => {
+const Map = ({ displayCurrentCoords }) => {
   return (
-    <View style={styles.container}>
-      <MapView
-        style={styles.map}
-        initialRegion={{
-          latitude: 37.78825,
-          longitude: -122.4324,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-        }}
-      >
-        <Marker
-          coordinate={{
+    <SafeAreaView>
+      <View style={styles.container}>
+        <MapView
+          style={styles.map}
+          initialRegion={{
             latitude: 37.78825,
             longitude: -122.4324,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
           }}
-        ></Marker>
-      </MapView>
-    </View>
+        >
+          <Text>{displayCurrentCoords}</Text>
+          <Marker
+            coordinate={{
+              latitude: 37.78825,
+              longitude: -122.4324,
+            }}
+          ></Marker>
+        </MapView>
+      </View>
+    </SafeAreaView>
   );
 };
 

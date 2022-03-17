@@ -8,72 +8,7 @@ import {
 import React, { useState, useEffect } from "react";
 import colors from "../app/config/colors";
 
-import * as Location from "expo-location";
-
-const HomeScreenWidget = ({ navigation }) => {
-  const name = "Ivan";
-
-  const [locationServiceEnabled, setLocationServiceEnabled] = useState(false);
-  const [displayCurrentAddress, setDisplayCurrentAddress] = useState(
-    "Wait, we are fetching you location..."
-  );
-
-  useEffect(() => {
-    CheckIfLocationEnabled();
-    GetCurrentLocation();
-  }, []);
-
-  // create the handler method
-
-  const GetCurrentLocation = async () => {
-    let { status } = await Location.requestForegroundPermissionsAsync();
-
-    if (status !== "granted") {
-      Alert.alert(
-        "Permission not granted",
-        "Allow the app to use location service.",
-        [{ text: "OK" }],
-        { cancelable: false }
-      );
-    }
-
-    let { coords } = await Location.getCurrentPositionAsync();
-
-    if (coords) {
-      const { latitude, longitude } = coords;
-      let response = await Location.reverseGeocodeAsync({
-        latitude,
-        longitude,
-      });
-
-      for (let item of response) {
-        let address = `${item.name}, ${item.city}, ${item.region}`;
-
-        setDisplayCurrentAddress(address);
-      }
-
-      // for (let item of response) {
-
-      //   setDisplayCurrentAddress(address);
-      // }
-    }
-  };
-
-  const CheckIfLocationEnabled = async () => {
-    let enabled = await Location.hasServicesEnabledAsync();
-
-    if (!enabled) {
-      Alert.alert(
-        "Location Service not enabled",
-        "Please enable your location services to continue",
-        [{ text: "OK" }],
-        { cancelable: false }
-      );
-    } else {
-      setLocationServiceEnabled(enabled);
-    }
-  };
-
+const HomeScreenWidget = ({ displayCurrentAddress }) => {
   return (
     <KeyboardAvoidingView>
       <View style={styles.container}>
@@ -102,6 +37,15 @@ const styles = StyleSheet.create({
     marginTop: 30,
     borderRadius: 5,
     padding: 24,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.35,
+    shadowRadius: 2,
+
+    elevation: 2,
   },
   currentLocation: {
     fontSize: 12,

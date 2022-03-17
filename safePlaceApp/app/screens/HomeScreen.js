@@ -1,29 +1,27 @@
-import {
-  KeyboardAvoidingView,
-  StyleSheet,
-  Text,
-  View,
-  Image,
-} from "react-native";
-import React from "react";
+import { KeyboardAvoidingView, StyleSheet, Text, View } from "react-native";
+import * as React from "react";
 
 import colors from "../config/colors";
-import HomeScreenWidget from "../../components/HomeScreenWidget";
-import Map from "../../components/Map";
+
+import LocationParent from "../../components/LocationParent";
 
 const HomeScreen = () => {
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding">
       <View style={styles.headerContainer}>
-        <Text style={styles.sectionTitle}>safe</Text>
-        <Text style={styles.sectionTitleSecondary}>Place</Text>
+        <View style={styles.innerContainer}>
+          <Text style={styles.sectionTitle}>safe</Text>
+          <Text style={styles.sectionTitleSecondary}>Place</Text>
+        </View>
       </View>
-      <View style={styles.mapContainer}>
-        <Map />
+
+      {/* MAP + WIDGET */}
+      <View>
+        <LocationParent />
       </View>
-      <View style={styles.widgetContainer}>
-        <HomeScreenWidget />
-      </View>
+
+      {/* FRIENDS TAB */}
+      <View></View>
     </KeyboardAvoidingView>
   );
 };
@@ -35,39 +33,26 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.primaryBackground,
     flexDirection: "column",
-    // paddingHorizontal: 14, SET PADDING ENTIRE SCREEN
+    paddingHorizontal: 14,
   },
   headerContainer: {
+    flexDirection: "column",
+    paddingTop: 60,
+    // paddingHorizontal: 24,
+  },
+  innerContainer: {
     flexDirection: "row",
-    paddingTop: 80,
-    paddingHorizontal: 24,
+    alignItems: "flex-end",
   },
   sectionTitle: {
-    fontSize: 24,
+    fontSize: 26,
     fontWeight: "bold",
     color: colors.lightGrey,
+    flexDirection: "column",
   },
   sectionTitleSecondary: {
-    fontSize: 28,
+    fontSize: 32,
     fontWeight: "bold",
     color: colors.primary,
-  },
-
-  // MAP
-  mapContainer: {
-    // position: "absolute",
-  },
-
-  widgetContainer: {
-    marginHorizontal: 20,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.35,
-    shadowRadius: 2,
-
-    elevation: 2,
   },
 });
