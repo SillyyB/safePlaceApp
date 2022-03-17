@@ -8,7 +8,7 @@ import {
 import React, { useState, useEffect } from "react";
 import colors from "../app/config/colors";
 
-const HomeScreenWidget = ({ displayCurrentAddress }) => {
+const HomeScreenWidget = ({ displayCurrentAddress, displayCurrentRegion }) => {
   return (
     <KeyboardAvoidingView>
       <View style={styles.container}>
@@ -16,7 +16,7 @@ const HomeScreenWidget = ({ displayCurrentAddress }) => {
 
         <View style={styles.placeContainer}>
           <Text style={styles.streetName}>{displayCurrentAddress}</Text>
-          <Text style={styles.placeName}>{displayCurrentAddress}</Text>
+          <Text style={styles.placeName}>{displayCurrentRegion}</Text>
         </View>
 
         <View style={styles.buttonContainer}>

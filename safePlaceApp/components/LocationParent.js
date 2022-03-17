@@ -10,7 +10,11 @@ const LocationParent = () => {
     "Fetching your location..."
   );
   const [displayCurrentCoords, setDisplayCurrentCoords] = useState(
-    "Fetching your location..."
+    "Fetching your coordinates..."
+  );
+
+  const [displayCurrentRegion, setDisplayCurrentRegion] = useState(
+    "Fetching your region..."
   );
 
   useEffect(() => {
@@ -47,9 +51,15 @@ const LocationParent = () => {
       }
 
       for (let item of response) {
-        let address = `${item.name}, ${item.region} - ${item.city}`;
+        let address = `${item.name}`;
 
         setDisplayCurrentAddress(address);
+      }
+
+      for (let item of response) {
+        let region = `${item.region} - ${item.city}`;
+
+        setDisplayCurrentRegion(region);
       }
     }
   };
@@ -75,7 +85,10 @@ const LocationParent = () => {
         <Map displayCurrentCoords={displayCurrentCoords} />
       </View>
       <View style={styles.widgetContainer}>
-        <HomeScreenWidget displayCurrentAddress={displayCurrentAddress} />
+        <HomeScreenWidget
+          displayCurrentRegion={displayCurrentRegion}
+          displayCurrentAddress={displayCurrentAddress}
+        />
       </View>
       {/* <Text>{displayCurrentCoords}</Text> */}
     </SafeAreaView>
@@ -90,8 +103,8 @@ const styles = StyleSheet.create({
     // position: "absolute",
   },
   widgetContainer: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    // flex: 1,
+
+    width: "100%",
   },
 });
