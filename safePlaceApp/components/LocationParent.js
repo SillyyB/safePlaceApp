@@ -9,10 +9,16 @@ const LocationParent = () => {
   const [displayCurrentAddress, setDisplayCurrentAddress] = useState(
     "Fetching your location..."
   );
-  const [displayCurrentCoords, setDisplayCurrentCoords] = useState(
+
+  // coords
+  const [displayCurrentLatitude, setDisplayCurrentlatitude] = useState(
+    "Fetching your coordinates..."
+  );
+  const [displayCurrentLongitude, setDisplayCurrentLongitude] = useState(
     "Fetching your coordinates..."
   );
 
+  // region
   const [displayCurrentRegion, setDisplayCurrentRegion] = useState(
     "Fetching your region..."
   );
@@ -45,9 +51,15 @@ const LocationParent = () => {
       });
 
       for (let item of response) {
-        let latitude = `${coords.latitude}`;
+        let latitude = `latitude: ${coords.latitude}`;
 
-        setDisplayCurrentCoords(latitude);
+        setDisplayCurrentlatitude(latitude);
+      }
+
+      for (let item of response) {
+        let longitude = `longitude: ${coords.longitude}`;
+
+        setDisplayCurrentLongitude(longitude);
       }
 
       for (let item of response) {
@@ -82,7 +94,10 @@ const LocationParent = () => {
   return (
     <SafeAreaView>
       <View style={styles.mapContainer}>
-        <Map displayCurrentCoords={displayCurrentCoords} />
+        <Map
+          displayCurrentlatitude={displayCurrentLatitude}
+          displayCurrentLongitude={displayCurrentLongitude}
+        />
       </View>
       <View style={styles.widgetContainer}>
         <HomeScreenWidget

@@ -5,7 +5,7 @@ import {
   KeyboardAvoidingView,
   TouchableOpacity,
 } from "react-native";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import colors from "../app/config/colors";
 
 const HomeScreenWidget = ({ displayCurrentAddress, displayCurrentRegion }) => {

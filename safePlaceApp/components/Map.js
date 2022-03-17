@@ -1,24 +1,19 @@
 import { SafeAreaView, View, Text, StyleSheet } from "react-native";
-import React from "react";
-
-//import all the components we are going to use.
+import React, { useState, useEffect } from "react";
 
 import MapView, { Marker } from "react-native-maps";
 
-const Map = ({ displayCurrentCoords }) => {
+const Map = () => {
   return (
     <SafeAreaView>
       <View style={styles.container}>
         <MapView
+          loadingEnabled={true}
+          showsUserLocation={true}
+          followsUserLocation={true} // zoom in map, BUT cant move around
+          userInterfaceStyle={"light"}
           style={styles.map}
-          initialRegion={{
-            latitude: 37.78825,
-            longitude: -122.4324,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421,
-          }}
         >
-          <Text>{displayCurrentCoords}</Text>
           <Marker
             coordinate={{
               latitude: 37.78825,
