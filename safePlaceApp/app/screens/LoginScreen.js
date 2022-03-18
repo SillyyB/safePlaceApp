@@ -3,8 +3,8 @@ import { Button, View, Text, StyleSheet } from "react-native";
 
 const LoginScreen = ({ navigation }) => {
   return (
-    <View>
-      <Text>LoginScreen</Text>
+    <View style={styles.Login}>
+      <Text>Login</Text>
 
       <Button
         title="Go to homescreen"
@@ -16,4 +16,11 @@ const LoginScreen = ({ navigation }) => {
 
 export default LoginScreen;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  Login: {
+    fontSize: 32,
+    fontWeight: "bold",
+    paddingTop: 60,
+
+  },
+});
