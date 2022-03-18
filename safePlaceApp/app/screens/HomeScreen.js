@@ -12,22 +12,26 @@ import colors from "../config/colors";
 
 import LocationParent from "../../components/LocationParent";
 import Logo from "../../components/Logo";
+import FriendsTabHomeScreen from "../../components/FriendsTabHomeScreen";
 
-const HomeScreen = ({navigation, ShareScreen}) => {
+const HomeScreen = ({ navigation, ShareScreen }) => {
   return (
-    <KeyboardAvoidingView style={styles.container} behavior="padding">
+    <KeyboardAvoidingView behavior="padding">
       <ScrollView>
-        <View style={styles.headerContainer}>
-          <Logo />
-        </View>
+        <View style={styles.container}>
+          <View style={styles.headerContainer}>
+            <Logo />
+          </View>
 
-        {/* MAP + WIDGET */}
-        <View>
-          <LocationParent navigation={navigation} />
+          {/* MAP + WIDGET */}
+          <View>
+            <LocationParent navigation={navigation} />
+          </View>
         </View>
-
         {/* FRIENDS TAB */}
-        <View></View>
+        <View>
+          <FriendsTabHomeScreen navigation={navigation} />
+        </View>
       </ScrollView>
     </KeyboardAvoidingView>
   );

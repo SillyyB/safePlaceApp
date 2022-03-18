@@ -10,7 +10,7 @@ const Map = () => {
         <MapView
           loadingEnabled={true}
           showsUserLocation={true}
-          // followsUserLocation={true} // zoom in map, BUT cant move around
+          followsUserLocation={true} // zoom in map, BUT cant move around
           userInterfaceStyle={"light"}
           style={styles.map}
         >
