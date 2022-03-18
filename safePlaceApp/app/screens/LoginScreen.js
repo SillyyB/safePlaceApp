@@ -18,4 +18,10 @@ const LoginScreen = ({ navigation }) => {
 
 export default LoginScreen;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  Login: {
+    fontSize: 32,
+    fontWeight: "bold",
+    paddingTop: 60,
+  },
+});
