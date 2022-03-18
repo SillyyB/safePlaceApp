@@ -1,10 +1,12 @@
 import * as React from "react";
 import { Button, View, Text, StyleSheet } from "react-native";
 
+import Logo from "../../components/Logo";
+
 const LoginScreen = ({ navigation }) => {
   return (
     <View>
-      <Text>LoginScreen</Text>
+      <Logo />
 
       <Button
         title="Go to homescreen"
