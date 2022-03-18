@@ -4,6 +4,7 @@ import {
   Text,
   View,
   ScrollView,
+  Button,
 } from "react-native";
 import * as React from "react";
 
@@ -11,7 +12,7 @@ import colors from "../config/colors";
 
 import LocationParent from "../../components/LocationParent";
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation, ShareScreen}) => {
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding">
       <ScrollView>
@@ -24,7 +25,7 @@ const HomeScreen = () => {
 
         {/* MAP + WIDGET */}
         <View>
-          <LocationParent />
+          <LocationParent navigation={navigation} />
         </View>
 
         {/* FRIENDS TAB */}

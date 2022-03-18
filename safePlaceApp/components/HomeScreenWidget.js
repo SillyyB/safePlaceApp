@@ -8,11 +8,16 @@ import {
 import React from "react";
 import colors from "../app/config/colors";
 
-const HomeScreenWidget = ({ displayCurrentAddress, displayCurrentRegion }) => {
+const HomeScreenWidget = ({
+  displayCurrentAddress,
+  displayCurrentRegion,
+  widgetTitle,
+  navigation,
+}) => {
   return (
     <KeyboardAvoidingView>
       <View style={styles.container}>
-        <Text style={styles.currentLocation}>current location:</Text>
+        <Text style={styles.currentLocation}>{widgetTitle}</Text>
 
         <View style={styles.placeContainer}>
           <Text style={styles.streetName}>{displayCurrentAddress}</Text>
@@ -20,7 +25,7 @@ const HomeScreenWidget = ({ displayCurrentAddress, displayCurrentRegion }) => {
         </View>
 
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("share")}>
             <Text style={styles.buttonText}>Start sharing</Text>
           </TouchableOpacity>
         </View>

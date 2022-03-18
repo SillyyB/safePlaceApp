@@ -4,7 +4,7 @@ import Map from "./Map";
 import HomeScreenWidget from "./HomeScreenWidget";
 import * as Location from "expo-location";
 
-const LocationParent = () => {
+const LocationParent = ({navigation}) => {
   const [locationServiceEnabled, setLocationServiceEnabled] = useState(false);
   const [displayCurrentAddress, setDisplayCurrentAddress] = useState(
     "Fetching your location..."
@@ -91,6 +91,7 @@ const LocationParent = () => {
     }
   };
 
+
   return (
     <SafeAreaView>
       <View style={styles.mapContainer}>
@@ -103,9 +104,10 @@ const LocationParent = () => {
         <HomeScreenWidget
           displayCurrentRegion={displayCurrentRegion}
           displayCurrentAddress={displayCurrentAddress}
+          widgetTitle={"current location:"}
+          navigation={navigation}
         />
       </View>
-      {/* <Text>{displayCurrentCoords}</Text> */}
     </SafeAreaView>
   );
 };

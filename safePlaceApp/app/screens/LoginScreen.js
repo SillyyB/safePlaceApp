@@ -10,6 +10,7 @@ const LoginScreen = ({ navigation }) => {
         title="Go to homescreen"
         onPress={() => navigation.navigate("Home")}
       />
+
     </View>
   );
 };
