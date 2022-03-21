@@ -63,9 +63,15 @@ const LocationParent = ({ navigation }) => {
       }
 
       for (let item of response) {
-        let address = `${item.name}`;
+        if (Platform.OS === "ios") {
+          let address = `${item.name}`;
 
-        setDisplayCurrentAddress(address);
+          setDisplayCurrentAddress(address);
+        } else {
+          let address = `${item.street}`;
+
+          setDisplayCurrentAddress(address);
+        }
       }
 
       for (let item of response) {
