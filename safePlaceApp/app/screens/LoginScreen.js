@@ -1,16 +1,17 @@
 import * as React from "react";
 import { Button, View, Text, StyleSheet } from "react-native";
 
+import Logo from "../../components/Logo";
+
 const LoginScreen = ({ navigation }) => {
   return (
-    <View style={styles.Login}>
-      <Text>Login</Text>
+    <View>
+      <Logo />
 
       <Button
         title="Go to homescreen"
         onPress={() => navigation.navigate("Home")}
       />
-
     </View>
   );
 };
@@ -22,6 +23,5 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: "bold",
     paddingTop: 60,
-
   },
 });
