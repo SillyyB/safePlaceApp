@@ -73,7 +73,6 @@ const LocationParent = ({ navigation }) => {
           setDisplayCurrentAddress(address);
         }
       }
-
       for (let item of response) {
         let region = `${item.region}, ${item.city}`;
 
