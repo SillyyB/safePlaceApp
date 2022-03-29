@@ -51,9 +51,6 @@ const FriendsTabHomeScreen = ({ navigation }) => {
           </Text>
         </TouchableOpacity>
       </View>
-      {/* <View style={{ backgroundColor: colors.white }}>
-        <Text style={styles.friendsCount}>4 friends</Text>
-      </View> */}
 
       {(() => {
         switch (value) {
@@ -79,8 +76,6 @@ const styles = StyleSheet.create({
     marginTop: 30,
     paddingHorizontal: 20,
     paddingVertical: 10,
-    borderBottomColor: colors.lightGrey,
-    borderBottomWidth: 1,
   },
   friendsButton: {
     fontSize: 16,

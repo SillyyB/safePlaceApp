@@ -67,7 +67,7 @@ const LocationParent = ({ navigation }) => {
           let address = `${item.name}`;
 
           setDisplayCurrentAddress(address);
-        } else {
+        } else if (Platform.OS === "android") {
           let address = `${item.street}`;
 
           setDisplayCurrentAddress(address);
@@ -99,10 +99,10 @@ const LocationParent = ({ navigation }) => {
 
   return (
     <SafeAreaView>
-      <View style={styles.mapContainer}>
+      <View>
         <Map
-          displayCurrentlatitude={displayCurrentLatitude}
-          displayCurrentLongitude={displayCurrentLongitude}
+        // displayCurrentlatitude={displayCurrentLatitude}
+        // displayCurrentLongitude={displayCurrentLongitude}
         />
       </View>
       <View style={styles.widgetContainer}>
@@ -120,10 +120,6 @@ const LocationParent = ({ navigation }) => {
 export default LocationParent;
 
 const styles = StyleSheet.create({
-  // MAP
-  mapContainer: {
-    // position: "absolute",
-  },
   widgetContainer: {
     // flex: 1,
 

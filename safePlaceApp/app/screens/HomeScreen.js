@@ -1,10 +1,8 @@
 import {
   KeyboardAvoidingView,
   StyleSheet,
-  Text,
   View,
   ScrollView,
-  Button,
 } from "react-native";
 import * as React from "react";
 
@@ -14,7 +12,7 @@ import LocationParent from "../../components/LocationParent";
 import Logo from "../../components/Logo";
 import FriendsTabHomeScreen from "../../components/FriendsTabHomeScreen";
 
-const HomeScreen = ({ navigation, ShareScreen }) => {
+const HomeScreen = ({ navigation }) => {
   return (
     <KeyboardAvoidingView behavior="padding">
       <ScrollView>
@@ -49,6 +47,5 @@ const styles = StyleSheet.create({
   headerContainer: {
     flexDirection: "column",
     paddingTop: 60,
-    // paddingHorizontal: 24,
   },
 });

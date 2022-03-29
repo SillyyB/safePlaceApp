@@ -12,7 +12,7 @@ const AddFriendsTab = ({ navigation }) => {
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("share")}
+          onPress={() => navigation.navigate("addfriends")}
         >
           <Text style={styles.buttonText}>Add friends</Text>
         </TouchableOpacity>
@@ -27,6 +27,8 @@ const styles = StyleSheet.create({
   addFriendsContainer: {
     flex: 1,
     alignItems: "center",
+    borderTopColor: colors.lightGrey,
+    borderTopWidth: 1,
   },
   instructions: {
     fontSize: 12,

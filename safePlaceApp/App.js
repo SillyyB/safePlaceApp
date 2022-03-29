@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./app/screens/HomeScreen";
 import LoginScreen from "./app/screens/LoginScreen";
 import ShareScreen from "./app/screens/ShareScreen";
+import AddFriendsScreen from "./app/screens/AddFriendsScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -21,13 +22,17 @@ export default function App() {
           name="Home"
           options={{ headerShown: false }}
           component={HomeScreen}
-          ShareScreen={ShareScreen}
         />
 
         <Stack.Screen
           name="share"
           options={{ headerShown: false }}
           component={ShareScreen}
+        />
+        <Stack.Screen
+          name="addfriends"
+          options={{ headerShown: false }}
+          component={AddFriendsScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
