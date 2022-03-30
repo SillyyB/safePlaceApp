@@ -5,7 +5,7 @@ import Searchbar from "./Searchbar";
 
 import FriendsTab from "./FriendsTab";
 
-const BigWidget = ({ title, secondarytitle, navigation, searchbar }) => {
+const BigWidget = ({ title, secondarytitle, navigation, SearchBar }) => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>

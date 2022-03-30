@@ -1,5 +1,5 @@
 import { SafeAreaView, View, Text, StyleSheet } from "react-native";
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import MapView, { Marker } from "react-native-maps";
 

@@ -31,8 +31,8 @@ export default FriendsTab;
 
 const styles = StyleSheet.create({
   mainContainer: {
-    // backgroundColor: colors.white,
-    // borderTopColor: colors.lightGrey,
+    backgroundColor: colors.white,
+    borderTopColor: colors.lightGrey,
     borderTopWidth: 1,
   },
   buttonContainer: {
