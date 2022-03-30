@@ -13,7 +13,10 @@ import colors from "../app/config/colors";
 
 const Searchbar = () => {
   return (
-    <KeyboardAvoidingView>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : null}
+      style={{ flex: 1 }}
+    >
       <View style={styles.container}>
         <TextInput style={styles.Searchbarcontainer} placeholder="Search" />
       </View>
