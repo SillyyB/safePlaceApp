@@ -5,7 +5,7 @@ import colors from "../app/config/colors";
 const Searchbar = () => {
   return (
     <View style={styles.container}>
-      <Text>Searchbar</Text>
+      <Text>Search</Text>
     </View>
   );
 };
